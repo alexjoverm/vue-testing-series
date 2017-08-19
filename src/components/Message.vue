@@ -1,10 +1,9 @@
 <template>
-    <span>{{message}}</span>
+    <li class="message">{{message}}</li>
 </template>
 
 <script>
   export default {
-    name: 'list',
     props: ['message']
   }
 </script>

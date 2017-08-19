@@ -1,11 +1,11 @@
-import { shallow } from 'vue-test-utils'
+import { mount } from 'vue-test-utils'
 import MessageList from '../src/components/MessageList'
 
 describe('MessageList.test.js', () => {
   let cmp
 
   beforeEach(() => {
-    cmp = shallow(MessageList, {
+    cmp = mount(MessageList, {
       // Beaware that props is overriden using `propsData`
       propsData: {
         messages: ['Cat']
