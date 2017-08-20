@@ -8,6 +8,7 @@
 import Message from './Message'
 
 export default {
+  name: 'MessageList',
   props: ['messages'],
   components: {
     Message
