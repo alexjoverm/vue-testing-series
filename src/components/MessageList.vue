@@ -1,14 +1,17 @@
 <template>
     <ul>
-        <li v-for="message in messages">
-            {{ message }}
-        </li>
+        <Message :message="message" v-for="message in messages"/>
     </ul>
 </template>
 
 <script>
+import Message from './Message'
+
 export default {
-  name: 'list',
-  props: ['messages']
+  name: 'MessageList',
+  props: ['messages'],
+  components: {
+    Message
+  }
 }
 </script>

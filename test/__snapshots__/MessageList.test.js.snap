@@ -2,7 +2,10 @@
 
 exports[`MessageList.test.js has the expected html structure 1`] = `
 <ul>
-  <li>
+  <li
+    class="message"
+    style="margin-top: 10px;"
+  >
     Cat
   </li>
 </ul>
