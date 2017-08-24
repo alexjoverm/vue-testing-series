@@ -67,4 +67,13 @@ describe('MessageList.test.js', () => {
   it('Message component has style padding-top: 10', () => {
     expect(cmp.find(Message).hasStyle('padding-top', '10')).toBe(true)
   })
+
+  it('calls handleClick when click on message', () => {
+    const stub = jest.fn()
+    cmp.setMethods({ handleMessageClick: stub })
+    cmp.update()
+
+    const el = cmp.find(Message).trigger('message-clicked')
+    expect(stub).toBeCalled()
+  })
 })
