@@ -68,12 +68,14 @@ describe('MessageList.test.js', () => {
     expect(cmp.find(Message).hasStyle('padding-top', '10')).toBe(true)
   })
 
-  it('calls handleClick when click on message', () => {
-    const stub = jest.fn()
-    cmp.setMethods({ handleMessageClick: stub })
+  it('Calls handleMessageClick when @message-click happens', () => {
+    cmp.vm.handleMessageClick = jest.fn()
     cmp.update()
+    // const stub = jest.fn()
+    // cmp.setMethods({ handleMessageClick: stub })
 
-    const el = cmp.find(Message).trigger('message-clicked')
-    expect(stub).toBeCalled()
+    const el = cmp.find(Message).vm.$emit('message-clicked', 'cat')
+
+    expect(cmp.vm.handleMessageClick).toBeCalledWith('cat')
   })
 })

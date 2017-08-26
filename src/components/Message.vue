@@ -10,7 +10,18 @@
 <script>
   export default {
     name: 'Message',
-    props: ['message'],
+    props: {
+      message: {
+        type: String,
+        required: true,
+        validator: value => value.length > 1
+      },
+      message2: String,
+      author: {
+        type: String,
+        default: 'Paco'
+      }
+    },
     methods: {
       handleClick() {
         console.log('lalala')
