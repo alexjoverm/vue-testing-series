@@ -41,8 +41,10 @@ export default {
     }
   },
   watch: {
-    results(newVal, oldVal) {
-      console.log(`Results: ${newVal} items found`)
+    inputValue(newVal, oldVal) {
+      if(newVal.trim().length && newVal !== oldVal) {
+        console.log(newVal)
+      }
     }
   }
 }
