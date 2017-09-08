@@ -5,6 +5,5 @@ exports[`App.test.js has the expected html structure 1`] = `
   id="app"
 >
   <!--  -->
-  <!--  -->
 </div>
 `;

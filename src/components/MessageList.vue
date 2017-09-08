@@ -1,26 +1,22 @@
 <template>
-    <ul>
-        <Message
-          @message-clicked="handleMessageClick"
-          :message="message"
-          v-for="message in messages"
-          :key="message"/>
+  <div>
+    <header class="list-header">
+      <slot name="header">
+        This is a default header
+      </slot>
+    </header>
+    <ul class="list-messages">
+      <slot/>
     </ul>
+  </div>
 </template>
 
 <script>
-import Message from './Message'
-
 export default {
   name: 'MessageList',
-  props: ['messages'],
-  methods: {
-    handleMessageClick(message) {
-      console.log(message)
-    }
-  },
-  components: {
-    Message
+  created() {
+    // console.log(this.$slots)
+    // console.log(this.$children)
   }
 }
 </script>
