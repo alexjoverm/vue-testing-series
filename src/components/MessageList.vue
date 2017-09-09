@@ -6,7 +6,7 @@
       </slot>
     </header>
     <ul class="list-messages">
-      <slot/>
+      <slot></slot>
     </ul>
   </div>
 </template>
