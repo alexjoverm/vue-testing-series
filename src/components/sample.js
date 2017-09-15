@@ -1,6 +1,6 @@
-import sample from '@/components/Message.vue'
+import sample from "@/components/Message"
 
 export default {
-  name: 'list',
-  props: ['messages']
+  name: "list",
+  props: ["messages"]
 }

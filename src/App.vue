@@ -4,18 +4,14 @@
       <header slot="header">
         Awesome header
       </header>
-      <Message
-          @message-clicked="handleMessageClick"
-          :message="message"
-          v-for="message in messages"
-          :key="message"/>
+      <Message @message-clicked="handleMessageClick" :message="message" v-for="message in messages" :key="message" />
     </MessageList>
   </div>
 </template>
 
 <script>
-import MessageList from './components/MessageList'
-import Message from './components/Message'
+import MessageList from 'components/MessageList'
+import Message from '@/components/Message'
 
 export default {
   name: 'app',
