@@ -18,4 +18,24 @@ npm run build
 npm run build --report
 ```
 
+## Testing
+
+> This project uses [jest]() as a test frame work. 
+
+``` bash 
+
+# run tests
+npm test
+
+or 
+
+npm t 
+
+# run tests in watch mode to monitor what breaks as you change code 
+npm test -- --watch
+
+or 
+
+npm t -- --watch 
+```
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
