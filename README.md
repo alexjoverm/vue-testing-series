@@ -20,7 +20,7 @@ npm run build --report
 
 ## Testing
 
-> This project uses [jest]() as a test frame work. 
+> This project uses [jest](https://facebook.github.io/jest/) as a test frame work. 
 
 ``` bash 
 
