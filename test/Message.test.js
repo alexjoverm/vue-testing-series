@@ -6,15 +6,15 @@ const createCmp = propsData => mount(Message, { propsData })
 describe('Message.test.js', () => {
   let cmp
 
-  describe('Properties', () => {
-    it('has a message property', () => {
-      cmp = createCmp({ message: 'hey' })
-      expect(cmp.hasProp('message', 'hey')).toBeTruthy()
-    })
+describe('Properties', () => {
+  it('has a message property', () => {
+    cmp = createCmp({ message: 'hey' })
+    expect(cmp.hasProp('message', 'hey')).toBeTruthy()
+  })
 
     it('has no cat property', () => {
       cmp = createCmp({ cat: 'hey', message: 'hey' })
-      expect(cmp.hasProp('cat', 'hey')).toBeFalsy()
+      expect(cmp.hasProp('cat', 'hey')).toBeTruthy()
     })
 
     it('Paco is the default author', () => {
