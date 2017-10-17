@@ -13,7 +13,7 @@ describe('Message.test.js', () => {
     })
 
     it('has no cat property', () => {
-      cmp = createCmp({ cat: 'hey', message: 'hey' })
+      cmp = createCmp({ message: 'hey' })
       expect(cmp.hasProp('cat', 'hey')).toBeFalsy()
     })
 
