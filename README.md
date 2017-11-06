@@ -1,8 +1,8 @@
 # Examples of Vue.js Component Unit Testing
 
-<img align="right" width="180" src="https://alexjoverm.github.io/images/vuejest.jpg">
+<a href="https://leanpub.com/testingvuejscomponentswithjest" alt="Test Vue.js components with Jest"><img align="right" width="180" src="https://alexjoverm.github.io/images/vuejest.jpg"></a>
 
-This repository contains code examples written for the series of articles “[Unit Testing Vue.js Components with the Official Vue Testing Tools and Jest](https://alexjoverm.github.io/series/Unit-Testing-Vue-js-Components-with-the-Official-Vue-Testing-Tools-and-Jest/)” by [Alex Jover](https://alexjoverm.github.io/about/).
+This repository contains code examples written for the series of articles “[Unit Testing Vue.js Components with the Official Vue Testing Tools and Jest](https://leanpub.com/testingvuejscomponentswithjest)” by [Alex Jover](https://alexjoverm.github.io/about/).
 
 ## Getting started
 
