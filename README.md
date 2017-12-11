@@ -14,7 +14,7 @@ You might also want to have a look at the testing tools that we're going to use 
 
 To run the code from this repository and build the application use the following commands in your terminal:
 
-``` bash
+```bash
 # clone the repository
 git clone git@github.com:alexjoverm/vue-testing-series.git
 
@@ -36,7 +36,7 @@ npm t -- --watch
 
 ### Build Setup
 
-``` bash
+```bash
 # build for production with minification
 npm run build
 
@@ -54,7 +54,7 @@ Here is the **full list of lessons**:
 
 1. [Write the first Vue.js Component Unit Test in Jest](https://alexjoverm.github.io/2017/08/21/Write-the-first-Vue-js-Component-Unit-Test-in-Jest/)<br>
    [`GitHub branch`](https://github.com/alexjoverm/vue-testing-series/tree/lesson-1)
-   
+
 1. [Test Deeply Rendered Vue.js Components in Jest](https://alexjoverm.github.io/2017/08/28/Test-Deeply-Rendered-Vue-js-Components-in-Jest/)<br>
    [`GitHub branch`](https://github.com/alexjoverm/vue-testing-series/tree/Test-fully-rendered-Vue-js-Components-in-Jest)
 
