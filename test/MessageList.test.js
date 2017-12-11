@@ -64,8 +64,8 @@ describe('MessageList.test.js', () => {
     expect(cmp.find(Message).hasClass('message')).toBe(true)
   })
 
-  it('Message component has style padding-top: 10', () => {
-    expect(cmp.find(Message).hasStyle('padding-top', '10')).toBe(true)
+  it('Message component has style margin-top: 10', () => {
+    expect(cmp.find(Message).hasStyle('margin-top', '10px')).toBe(true)
   })
 
   it('Calls handleMessageClick when @message-click happens', () => {
