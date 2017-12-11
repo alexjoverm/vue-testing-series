@@ -14,6 +14,7 @@ You might also want to have a look at the testing tools that we're going to use 
 
 To run the code from this repository and build the application use the following commands in your terminal:
 
+
 ```bash
 # clone the repository
 git clone git@github.com:alexjoverm/vue-testing-series.git

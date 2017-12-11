@@ -12,9 +12,9 @@ describe('Message.test.js', () => {
       expect(cmp.hasProp('message', 'hey')).toBeTruthy()
     })
 
-    it('has no cat property', () => {
+    it("has a cat property, since it's added as an attribute", () => {
       cmp = createCmp({ cat: 'hey', message: 'hey' })
-      expect(cmp.hasProp('cat', 'hey')).toBeFalsy()
+      expect(cmp.hasProp('cat', 'hey')).toBeTruthy()
     })
 
     it('Paco is the default author', () => {
