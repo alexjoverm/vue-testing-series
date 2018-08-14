@@ -1,5 +1,5 @@
 <template>
-    <li style="margin-top: 10px" class="message">{{message}}</li>
+    <li style="padding-top: 10px" class="message">{{message}}</li>
 </template>
 
 <script>
