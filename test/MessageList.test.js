@@ -1,4 +1,4 @@
-import { mount } from 'vue-test-utils'
+import { mount } from '@vue/test-utils'
 import MessageList from '../src/components/MessageList'
 import Message from '../src/components/Message'
 
@@ -7,7 +7,7 @@ describe('MessageList.test.js', () => {
 
   beforeEach(() => {
     cmp = mount(MessageList, {
-      // Beaware that props is overriden using `propsData`
+      // Be aware that props is overridden using `propsData`
       propsData: {
         messages: ['Cat']
       }
@@ -15,7 +15,7 @@ describe('MessageList.test.js', () => {
   })
 
   it('has received ["Cat"] as the message property', () => {
-    expect(cmp.vm.messages).toEqual(['Cat'])
+    expect(cmp.props().messages).toEqual(['Cat'])
   })
 
   it('has the expected html structure', () => {
@@ -43,7 +43,7 @@ describe('MessageList.test.js', () => {
   })
 
   it('Message has a "message" property equals to "Cat"', () => {
-    expect(cmp.find(Message).hasProp('message', 'Cat')).toBe(true)
+    expect(cmp.find(Message).props().message).toBe('Cat')
   })
 
   // Structure
@@ -56,26 +56,23 @@ describe('MessageList.test.js', () => {
   })
 
   it('Message has a class attribute set to "message"', () => {
-    expect(cmp.find(Message).hasAttribute('class', 'message')).toBe(true)
+    expect(cmp.find(Message).attributes().class).toBe('message')
   })
 
   // Style
   it('Message component has the .message class', () => {
-    expect(cmp.find(Message).hasClass('message')).toBe(true)
+    expect(cmp.find(Message).classes()).toContain('message')
   })
 
-  it('Message component has style margin-top: 10', () => {
-    expect(cmp.find(Message).hasStyle('margin-top', '10px')).toBe(true)
+  it('Message component has style padding-top: 10', () => {
+    expect(cmp.find(Message).attributes().style).toBe('padding-top: 10px;')
   })
 
   it('Calls handleMessageClick when @message-click happens', () => {
-    cmp.vm.handleMessageClick = jest.fn()
-    cmp.update()
-    // const stub = jest.fn()
-    // cmp.setMethods({ handleMessageClick: stub })
+    const stub = jest.fn()
+    cmp.setMethods({ handleMessageClick: stub })
+    const el = cmp.find('.message').vm.$emit('message-clicked', 'Cat')
 
-    const el = cmp.find(Message).vm.$emit('message-clicked', 'cat')
-
-    expect(cmp.vm.handleMessageClick).toBeCalledWith('cat')
+    expect(stub).toBeCalledWith('Cat')
   })
 })
