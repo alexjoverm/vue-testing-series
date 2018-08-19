@@ -25,7 +25,7 @@ export default {
   computed: {
     reversedInput() {
       return this.reversed ?
-        this.inputValue.split("").reverse().join("") :
+        this.inputValue.split('').reverse().join('') :
         this.inputValue
     }
   },
@@ -42,7 +42,8 @@ export default {
   },
   watch: {
     inputValue(newVal, oldVal) {
-      if(newVal.trim().length && newVal !== oldVal) {
+      //console.log(newVal, oldVal);
+      if (newVal.trim().length && newVal !== oldVal) {
         console.log(newVal)
       }
     }
