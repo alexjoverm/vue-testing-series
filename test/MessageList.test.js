@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { mount } from 'vue-test-utils'
+import { shallowMount } from '@vue/test-utils'
 import MessageList from '../src/components/MessageList'
 import Message from '../src/components/Message'
 
@@ -9,19 +9,19 @@ describe('MessageList.test.js', () => {
   beforeEach(() => {
     const messageWrapper = {
       render(h) {
-        return h(Message, { props: { message: 'hey yo' }  })
+        return h(Message, { props: { message: 'hey yo' } })
       }
     }
 
-    cmp = mount(MessageList, {
+    cmp = shallowMount(MessageList, {
       slots: {
         default: messageWrapper
       }
     })
   })
 
-  it('Messages are inserted in a ul.list-messages element', () => {
-    const list = cmp.find('ul.list-messages')
+  it('Messages are inserted in a MessageList component', () => {
+    const list = cmp.find(MessageList)
     expect(list.find(Message).isVueInstance()).toBe(true)
   })
 
@@ -31,7 +31,7 @@ describe('MessageList.test.js', () => {
   })
 
   it('Header slot is rendered withing .list-header', () => {
-    const component = mount(MessageList, {
+    const component = shallowMount(MessageList, {
       slots: {
         header: '<div>What an awesome header</div>'
       }
