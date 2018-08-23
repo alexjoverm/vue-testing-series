@@ -1,6 +1,6 @@
 <template>
     <li
-      style="margin-top: 10px"
+      style="padding-top: 10px"
       class="message"
       @click="handleClick">
         {{message}}
