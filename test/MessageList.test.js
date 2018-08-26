@@ -1,4 +1,4 @@
-import { mount } from 'vue-test-utils'
+import { mount } from '@vue/test-utils'
 import MessageList from '../src/components/MessageList'
 
 describe('MessageList.test.js', () => {
@@ -6,7 +6,7 @@ describe('MessageList.test.js', () => {
 
   beforeEach(() => {
     cmp = mount(MessageList, {
-      // Beaware that props is overriden using `propsData`
+      // Be aware that props is overridden using `propsData`
       propsData: {
         messages: ['Cat']
       }
