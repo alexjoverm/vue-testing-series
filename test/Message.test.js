@@ -1,4 +1,4 @@
-import { mount } from 'vue-test-utils'
+import { mount } from '@vue/test-utils'
 import Message from '../src/components/Message'
 
 const createCmp = propsData => mount(Message, { propsData })
@@ -9,24 +9,23 @@ describe('Message.test.js', () => {
   describe('Properties', () => {
     it('has a message property', () => {
       cmp = createCmp({ message: 'hey' })
-      expect(cmp.hasProp('message', 'hey')).toBeTruthy()
+      expect(cmp.props().message).toBe('hey')
     })
 
-    it('has no cat property', () => {
+    it("has a cat property, since it's added as an attribute", () => {
       cmp = createCmp({ cat: 'hey', message: 'hey' })
-      expect(cmp.hasProp('cat', 'hey')).toBeFalsy()
+      expect(cmp.props().cat).toBeUndefined()
     })
 
     it('Paco is the default author', () => {
       cmp = createCmp({ message: 'hey' })
-      expect(cmp.hasProp('author', 'Paco')).toBeTruthy()
+      expect(cmp.props().author).toBe('Paco')
     })
 
     describe('Validation', () => {
-      const message = createCmp().vm.$options.props.message
+      const message = createCmp({ message: 'hey' }).vm.$options.props.message
 
       it('message is of type string', () => {
-        console.log(message)
         expect(message.type).toBe(String)
       })
 
@@ -47,20 +46,18 @@ describe('Message.test.js', () => {
     })
 
     it('calls handleClick when click on message', () => {
-      cmp.vm.handleClick = jest.fn()
-      // or triggering it: const spy = spyOn(cmp.vm, 'handleClick')
-      // or use setMethods
-      cmp.update() // Forces to re-render, applying changes on template. Necessary when tempalte needs to update
-
+      const handleClick = jest.fn()
+      cmp.setMethods({ handleClick })
       const el = cmp.find('.message').trigger('click')
-      expect(cmp.vm.handleClick).toBeCalled()
+
+      expect(handleClick).toBeCalled()
     })
 
     it('triggers a message-clicked event when a handleClick method is called', () => {
       const stub = jest.fn()
       cmp.vm.$on('message-clicked', stub)
-
       cmp.vm.handleClick()
+
       expect(stub).toBeCalledWith('Cat')
     })
   })
