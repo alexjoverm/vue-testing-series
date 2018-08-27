@@ -1,5 +1,3 @@
-
-
 // jest.mock('axios', () => ({
 //   get: jest.fn(() => Promise.resolve({ data: 3 }))
 // }))
@@ -22,7 +20,9 @@ describe('Form.test.js', () => {
 
     expect(result).toEqual({ data: [3] })
     expect(cmp.vm.results).toEqual([3])
-    expect(axios.get).toBeCalledWith('https://jsonplaceholder.typicode.com/posts?q=an')
+    expect(axios.get).toBeCalledWith(
+      'https://jsonplaceholder.typicode.com/posts?q=an'
+    )
   })
 
   describe('Properties', () => {
@@ -52,31 +52,22 @@ describe('Form.test.js', () => {
       spy.mockClear()
     })
 
-    it('is not called if value is empty (trimmed)', next => {
+    it('is not called if value is empty (trimmed)', () => {
       cmp.setData({ inputValue: '   ' })
-      cmp.vm.$nextTick(() => {
-        expect(spy).not.toBeCalled()
-        next()
-      })
+      expect(spy).not.toBeCalled()
     })
 
-    it('is not called if values are the same', next => {
+    it('is not called if values are the same', () => {
       cmp = shallowMount(Form, {
         data: () => ({ inputValue: 'foo' })
       })
       cmp.setData({ inputValue: 'foo' })
-      cmp.vm.$nextTick(() => {
-        expect(spy).not.toBeCalled()
-        next()
-      })
+      expect(spy).not.toBeCalled()
     })
 
-    it('is called with the new value in other cases', next => {
+    it('is called with the new value in other cases', () => {
       cmp.setData({ inputValue: 'foo' })
-      cmp.vm.$nextTick(() => {
-        expect(spy).toBeCalled()
-        next()
-      })
+      expect(spy).toBeCalled()
     })
   })
 })
