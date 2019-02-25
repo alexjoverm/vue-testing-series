@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactBox.test.js fullName should be the combination of name + surname 1`] = `
+<div
+  class=""
+>
+  <p>
+    John Doe
+  </p>
+</div>
+`;
+
+exports[`ContactBox.test.js should have a selected class when the selected prop is true 1`] = `
+<div
+  class="selected"
+>
+  <p>
+    John Doe
+  </p>
+</div>
+`;
